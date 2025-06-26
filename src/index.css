@@ -1,0 +1,97 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 10 14 26;
+    --foreground: 255 255 255;
+
+    --card: 30 41 59;
+    --card-foreground: 255 255 255;
+
+    --popover: 30 41 59;
+    --popover-foreground: 255 255 255;
+
+    --primary: 0 210 255;
+    --primary-foreground: 10 14 26;
+
+    --secondary: 139 92 246;
+    --secondary-foreground: 255 255 255;
+
+    --muted: 30 41 59;
+    --muted-foreground: 156 163 175;
+
+    --accent: 255 0 128;
+    --accent-foreground: 255 255 255;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 41 59;
+    --input: 30 41 59;
+    --ring: 0 210 255;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 10 14 26;
+    --sidebar-foreground: 255 255 255;
+    --sidebar-primary: 0 210 255;
+    --sidebar-primary-foreground: 10 14 26;
+    --sidebar-accent: 30 41 59;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 30 41 59;
+    --sidebar-ring: 0 210 255;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-deep-navy text-foreground font-sans;
+    background: linear-gradient(135deg, #0A0E1A 0%, #1E293B 50%, #0F172A 100%);
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .liquid-gradient {
+    background: linear-gradient(45deg, 
+      rgba(0, 210, 255, 0.3) 0%, 
+      rgba(255, 0, 128, 0.3) 50%, 
+      rgba(139, 92, 246, 0.3) 100%);
+    filter: blur(60px);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .floating-element {
+    animation: particle-float 6s ease-in-out infinite;
+  }
+
+  .floating-element:nth-child(2n) {
+    animation-delay: -2s;
+  }
+
+  .floating-element:nth-child(3n) {
+    animation-delay: -4s;
+  }
+}
