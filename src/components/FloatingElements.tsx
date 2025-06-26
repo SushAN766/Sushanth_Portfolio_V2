@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Code, Cpu, Zap, Star, Circle, Triangle } from 'lucide-react';
 

@@ -1,5 +1,3 @@
-
-import React from 'react';
 import Navigation from '@/components/Navigation';
 import FloatingElements from '@/components/FloatingElements';
 import HeroSection from '@/components/HeroSection';

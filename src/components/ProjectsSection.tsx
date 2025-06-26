@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExternalLink, Code } from 'lucide-react';
 
 const ProjectsSection = () => {

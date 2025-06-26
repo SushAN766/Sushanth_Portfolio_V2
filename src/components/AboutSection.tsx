@@ -1,4 +1,3 @@
-import React from 'react';
 import { Heart, Coffee, Code2, Lightbulb, GraduationCap, Briefcase, Award, Trophy } from 'lucide-react';
 
 const AboutSection = () => {

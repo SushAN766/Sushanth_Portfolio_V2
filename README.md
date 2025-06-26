@@ -9,10 +9,10 @@ I’m Sushanth, a passionate developer with an eye for design and a love for cle
 
 # 📬 Contact
 Want to connect or collaborate?
-- 📧 Email: sushanthbs766@gmail.com
-- 🔗 LinkedIn: linkedin.com/in/sshnth
-- 🐱 GitHub: github.com/SushAN766 
-- 🐦 Twitter: @ssnthbs
-- 🌐 Portfolio:[sushanth.tech](https://portfolio-site-gray-chi.vercel.app/)
+- 📧 [Email] (mailto:sushanthbs766@gmail.com) 
+- 🔗[LinkedIn](https://www.linkedin.com/in/sshnth/)
+- 🐱[GitHub] (https://github.com/SushAN766)
+- 🐦 [X](https://x.com/https://x.com/ssnthbs)
+- 🌐[Portfolio](https://portfolio-site-gray-chi.vercel.app/)
 
 Built with 💜 using React, TypeScript, and a lot of coffee — by Sushanth
