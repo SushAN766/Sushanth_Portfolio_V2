@@ -13,6 +13,6 @@ Want to connect or collaborate?
 -  [LinkedIn](https://www.linkedin.com/in/sshnth/)
 -  [GitHub](https://github.com/SushAN766)
 -  [Twitter/X](https://x.com/https://x.com/ssnthbs)
--  [Portfolio](https://portfolio-site-gray-chi.vercel.app/)
+-  [Portfolio](https://codeverse-inky.vercel.app/)
 
 Built with 💜 using React, TypeScript, and a lot of coffee — by Sushanth
