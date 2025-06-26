@@ -7,7 +7,7 @@ This site is a reflection of my journey as a developer — from projects I've bu
 #  About Me
 I’m Sushanth, a passionate developer with an eye for design and a love for clean code. This portfolio is a window into my world — the Codeverse.
 
-# 📬 Contact
+#  Contact
 Want to connect or collaborate?
 -  [Email](mailto:sushanthbs766@gmail.com) 
 -  [LinkedIn](https://www.linkedin.com/in/sshnth/)
