@@ -7,7 +7,7 @@ const ProjectsSection = () => {
       description: "An AI-powered expense splitting app that makes managing shared expenses effortless and fun.",
       tech: ["Convex", "Next.js", "Gemini AI", "Inngest","Resend","ShadCN UI","TypeScript","Tailwind CSS","Vercel"],
       gradient: "from-neon-blue to-cyber-pink",
-      demoUrl: "https://pay-split-ai-r1sh.vercel.app/",
+      demoUrl: "https://pay-split-ai-dhrp.vercel.app/",
       codeUrl: "https://github.com/SushAN766/PaySplit-AI"
     },
     {
