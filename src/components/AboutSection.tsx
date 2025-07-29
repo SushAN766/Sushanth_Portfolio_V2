@@ -62,10 +62,10 @@ const AboutSection = () => {
       description: "Digital course focused on cloud concepts, AWS services, and cost management strategies."
     },
     {
-      title: "Privacy and Security in Online Social Media",
-      issuer: "NPTEL",
-      date: "May 2025",
-      description: "Course on privacy and security issues in online social media platforms, covering data protection, user privacy, and security measures"
+      title: "Academic India Cohort ",
+      issuer: "ServiceNow",
+      date: "Nov 2024 - Dec 2024",
+      description: "By completing 200:00 hours of training from November 19, 2024 to December 13, 2024."
     },
     {
       title: "MERN Stack Web Development",
@@ -254,7 +254,7 @@ const AboutSection = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+       {/* <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { number: '30+', label: 'Projects Built' },
             { number: '3+', label: 'Years Experience' },
@@ -270,7 +270,7 @@ const AboutSection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div>*/}
       </div>
     </section>
   );
