@@ -49,17 +49,17 @@ const AboutSection = () => {
     {
       position: "Machine Learning Intern",
       company: "Acmegrade",
-      period: "Aug2023 - Sep2023",
+      period: "Aug 2023 - Sep 2023",
       description: "Completed a virtual internship focused on core machine learning concepts and hands-on projects.Worked on projects involving data preprocessing, training ML models using Python (NumPy, Pandas, Scikit-learn)."
     }
   ];
 
   const certifications = [
     {
-      title: "AWS Certified Solutions Architect",
+      title: "AWS Cloud Practitioner Essentials",
       issuer: "Amazon Web Services",
-      date: "2023",
-      description: "Professional level certification for designing distributed systems on AWS"
+      date: "2025",
+      description: "Digital course focused on cloud concepts, AWS services, and cost management strategies."
     },
     {
       title: "Privacy and Security in Online Social Media",
