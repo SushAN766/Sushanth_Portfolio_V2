@@ -186,14 +186,14 @@ const ContactSection = () => {
               </p>
             </div>
 
-            {/* Fun Quote */}
+            {/* Fun Quote 
             <div className="glass-effect p-8 rounded-xl text-center">
               <div className="text-4xl mb-4">💭</div>
               <blockquote className="text-lg text-gray-300 italic">
                 "The best way to predict the future is to create it."
               </blockquote>
               <p className="text-neon-blue mt-2">- Let's create something amazing together!</p>
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>

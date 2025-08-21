@@ -1,41 +1,76 @@
-import { ExternalLink, Code } from 'lucide-react';
+import { useState, useRef, useEffect } from "react";
+import { ExternalLink, Code } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Splendz — Smart Expense Splitting, Simplified with AI.",
-      description: "An AI-powered expense splitting app that makes managing shared expenses effortless and fun.",
-      tech: ["Convex", "Next.js", "Gemini AI", "Inngest","Resend","ShadCN UI","TypeScript","Tailwind CSS","Vercel"],
+      title: "Splendz",
+      description:
+        "Splendz is an AI-powered platform for effortless event planning and expense sharing. It helps users organize events, track budgets, assign tasks, and simplify settlements with real-time coordination and intelligent recommendations.",
+      tech: [
+        "Convex",
+        "Next.js",
+        "Gemini AI",
+        "Inngest",
+        "Resend",
+        "ShadCN UI",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vercel",
+      ],
       gradient: "from-neon-blue to-cyber-pink",
+      imageUrl: "/images/splendz.png",
       demoUrl: "https://pay-split-ai-dhrp.vercel.app/",
-      codeUrl: "https://github.com/SushAN766/PaySplit-AI"
+      codeUrl: "https://github.com/SushAN766/PaySplit-AI",
     },
     {
-      title: "NovaMart – A Full-Stack PERN CRUD Application",
-      description: "Build a Product Store with Postgres & React, featuring product management, and advanced features like rate limiting and bot detection.",
-      tech: ["React (Vite) + TailwindCSS + DaisyUI + Zustand", "Node.js + Express.js", "PostgreSQL"],
-      gradient: "from-glow-purple to-neon-blue",
-      demoUrl: "https://novamart-z7fh.onrender.com",
-      codeUrl: "https://github.com/SushAN766/CrudStore"
-    },
-    {
-      title: "Travaera — AI Travel Companion.",
-      description: "AI-powered travel planning app that helps users discover and plan their perfect trips with personalized recommendations.",
-      tech: ["React", "TypeScript", "Tailwind CSS", "ShadCN UI","Gemini API","Serpapi"],
+      title: "Travaera ",
+      description:
+        "Build an AI-powered travel agent that helps users plan personalized trips effortlessly. Integrates Google Gemini for AI-driven travel suggestions and SerpAPI to fetch real-time flight data. Features include an interactive itinerary builder, chat assistant for travel advice, customizable settings, and a fully responsive UI",
+      tech: ["React", "TypeScript", "Tailwind CSS", "ShadCN UI", "Gemini API", "Serpapi"],
       gradient: "from-cyber-pink to-glow-purple",
+      imageUrl: "/images/travaera.png",
       demoUrl: "https://travaera.vercel.app",
-      codeUrl: "https://github.com/SushAN766/travaera"
+      codeUrl: "https://github.com/SushAN766/travaera",
     },
     {
-      title: "AI-Powered Vision for Underwater Waste Detection.",
-      description: "An AI-powered underwater trash detection application that uses advanced computer vision to identify marine debris in images and videos.",
-      tech: ["React", "TypeScript", "Tailwind", "Framer Motion","Ultralytics","OpenCV","Python FastAPI","YOLO"],
+      title: "Sea Gaurdian",
+      description:
+        "An AI-driven application that identifies marine debris in images and videos using advanced computer vision. Users can upload single images or multiple frames to detect trash, view bounding boxes with confidence scores, and analyze detection statistics via an analytics dashboard. The system features a modern React frontend and a Python FastAPI backend for seamless, real-time processing.",
+      tech: ["React", "TypeScript", "Tailwind", "Framer Motion", "Ultralytics", "OpenCV", "Python FastAPI", "YOLO"],
       gradient: "from-neon-blue to-electric-blue",
+      imageUrl: "/images/ocean-glance.png",
       demoUrl: "#",
-      codeUrl: "https://github.com/SushAN766/ocean-glance"
+      codeUrl: "https://github.com/SushAN766/SeaTrash",
     },
-    
+    {
+      title: "Employee Data Management Portal",
+      description:
+        "A Java-based desktop application to efficiently manage employee records. Supports CRUD operations—adding, updating, deleting, and retrieving employee information—integrated with a MySQL database. The user interface is built using Swing, offering an intuitive and organized workflow for HR departments or small businesses.",
+      tech: ["Java", "MySQL", "Swing"],
+      gradient: "from-cyber-pink to-glow-purple",
+      imageUrl: "/images/EmpTrack.png",
+      demoUrl: "#",
+      codeUrl: "https://github.com/SushAN766/EmpTrack",
+    },
   ];
+
+  const [activeOverlay, setActiveOverlay] = useState(null);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        activeOverlay !== null &&
+        cardRefs.current[activeOverlay] &&
+        !cardRefs.current[activeOverlay].contains(event.target)
+      ) {
+        setActiveOverlay(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [activeOverlay]);
 
   return (
     <section id="projects" className="min-h-screen py-20 px-4">
@@ -48,8 +83,7 @@ const ProjectsSection = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            A collection of projects that showcase my passion for creating 
-            beautiful, functional, and innovative digital experiences.
+            A collection of projects that showcase my passion for creating beautiful, functional, and innovative digital experiences.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-neon-blue to-cyber-pink mx-auto rounded-full mt-6"></div>
         </div>
@@ -57,29 +91,34 @@ const ProjectsSection = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div 
+            <div
               key={project.title}
-              className="glass-effect rounded-xl overflow-hidden hover:scale-105 transition-all duration-500 group"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              ref={(el) => (cardRefs.current[index] = el)}
+              className="relative glass-effect rounded-xl overflow-hidden group hover:scale-105 transition-transform duration-500"
             >
-              {/* Project Header */}
+              {/* Project Image */}
+              {project.imageUrl && (
+                <div className="w-full h-64 flex items-center justify-center bg-dark-slate">
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
+
+              {/* Gradient Bar */}
               <div className={`h-2 bg-gradient-to-r ${project.gradient}`}></div>
-              
-              <div className="p-8">
-                {/* Title */}
+
+              {/* Project Content */}
+              <div className="p-6">
                 <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-neon-blue transition-colors duration-300">
                   {project.title}
                 </h3>
-
-                {/* Description */}
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <p className="text-gray-300 mb-4 leading-relaxed">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
-                    <span 
+                    <span
                       key={tech}
                       className="px-3 py-1 bg-dark-slate text-neon-blue text-xs rounded-full border border-neon-blue/30"
                     >
@@ -88,40 +127,26 @@ const ProjectsSection = () => {
                   ))}
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-4">
-                  <button 
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-blue to-cyber-pink text-white rounded-lg hover:scale-105 transition-transform duration-300"
-                    onClick={() => window.open(project.demoUrl, '_blank')}
+                {/* Demo & Code Icons BELOW content */}
+                <div className="flex gap-3 mt-3">
+                  <button
+                    className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-neon-blue to-cyber-pink text-white rounded-full shadow-lg hover:shadow-neon-blue hover:scale-110 transition-all duration-300"
+                    onClick={() => window.open(project.demoUrl, "_blank")}
                   >
-                    <ExternalLink size={16} />
-                    Live Demo
+                    <ExternalLink size={20} />
                   </button>
-                  <button 
-                    className="flex items-center gap-2 px-4 py-2 glass-effect text-neon-blue rounded-lg hover:bg-neon-blue hover:text-deep-navy transition-all duration-300"
-                    onClick={() => window.open(project.codeUrl, '_blank')}
+                  <button
+                    className="flex items-center justify-center w-10 h-10 glass-effect text-neon-blue rounded-full shadow-lg hover:shadow-cyber-pink hover:scale-110 transition-all duration-300"
+                    onClick={() => window.open(project.codeUrl, "_blank")}
                   >
-                    <Code size={16} />
-                    View Code
+                    <Code size={20} />
                   </button>
                 </div>
-              </div>
 
-              {/* Hover Effect Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none`}></div>
+              </div>
             </div>
           ))}
         </div>
-
-        {/* Call to Action */}
-        {/*<div className="text-center mt-16">
-          <p className="text-lg text-gray-300 mb-6">
-            Want to see more of my work?
-          </p>
-          <button className="px-8 py-3 glass-effect text-neon-blue font-semibold rounded-lg hover:scale-105 transition-all duration-300 hover:bg-neon-blue hover:text-deep-navy">
-            View All Projects
-          </button>
-        </div>*/}
       </div>
     </section>
   );
